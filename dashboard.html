@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <div class="user-profile">
+                <img src="profile.png" alt="profile">
+            </div>
+        </header>
+
+        <aside>
+            <div class="logo">
+                <img src="app_logo.jpg" alt="Weather App Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2 style="font-size: 28px; font-weight: bold; color: rgb(0, 0, 0); padding: 10px; border-radius: 15px; text-align: center;">Enter Your City Name:</h2>
+            <section id="input-container">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button id="getWeather">Get Weather</button>          
+            </section>
+
+            <section id="weather-widget">
+                <div id="currentWeather"></div> <!-- This div will display the current weather information -->
+                <div id="temperatureToggle" style="display: none; align-items: center;">
+                    <span id="temperatureDisplay">°F</span>
+                    <input type="checkbox" id="tempToggle" style="margin-left: 10px;" />
+                </div>
+            </section>
+
+            <section id="charts" style="display: none;">
+                <h2 style="font-size: 28px; font-weight: bold; color:  #104e8b; margin-top: 2%; padding: 10px; border-radius: 5px; text-align: center;">Weather Charts</h2>
+                <div class="chart-container">
+                    <h3 style="font-size: 24px; font-weight: bold; color: black; margin-top: 5%; text-align: center;">Bar Chart</h3>
+                    <canvas id="barChart"></canvas>
+                      
+                    <h3 style="font-size: 24px; font-weight: bold; color: black; margin-top: 5%; text-align: center;">Doughnut Chart</h3>
+                    <canvas id="doughnutChart"></canvas>
+                    
+                    <h3 style="font-size: 24px; font-weight: bold; color: black; margin-top: 5%; text-align: center;">Line Chart</h3>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </section>
+       
+        </main>
+
+        <footer>
+            <p>Weather Dashboard © 2024</p>
+        </footer>
+    </div>
+
+</body>
+</html>

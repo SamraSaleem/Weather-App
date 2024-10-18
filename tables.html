@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Forecast And Chatbot</h1>
+            <div class="user-profile">
+                <img src="profile.png" alt="profile">
+            </div>
+        </header>
+
+        <aside>
+            <div class="logo">
+                <img src="app_logo.jpg" alt="Weather App Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <h2 style="font-size: 28px; font-weight: bold; color: rgb(0, 0, 0);  padding: 10px; border-radius: 15px; text-align: center;">Enter name of City to check Weather Forecast</h2>
+            <section id="input-container">
+                <input type="text" id="cityInput" placeholder="Enter name of the city">  
+                <button id="getWeather">Get Forecast Table</button>  
+            </section>
+
+            <section>
+                <div id="filterSection">
+                    <label for="filterDropdown"></label>
+                    <select id="filterDropdown">
+                        <option value="none">Select a filter</option>
+                        <option value="asc">Show temperatures in ascending order</option>
+                        <option value="desc">Show temperatures in descending order</option>
+                        <option value="rain">Filter out days with rain</option>
+                        <option value="noRain">Filter out days with no rain</option>
+                        <option value="highest">Show the day with the highest temperature</option>
+                    </select>
+                </div>
+            </section>
+
+            <div id="city" style="display: none; text-align: center; font-size: large; font-weight: 600; "></div>
+            <section id="forecastTableSection" style="display: none;">
+                <h2 style="font-size: 24px; font-weight: bold; color: black; margin-top: 3%; text-align: center;" > 5-Day Forecast Table</h2>
+                <br>
+                <div id="forecastTable"></div>
+                <div id="pagination"></div>
+            </section>
+            
+            <section id="apiInputContainer">
+                <h2 style="font-size: 28px; font-weight: bold; color: rgb(0, 0, 0); padding: 10px; border-radius: 15px; text-align: center;">
+                    Weather and Gemini Chatbot
+                </h2>
+            
+                <form id="apiKeyForm">
+                    <input type="text" id="apiKey" placeholder="Enter your Gemini API key"  />
+                    <br>
+                    <button type="submit" class="apibtn">Save API Key</button> 
+                </form>
+            
+                <br><br>
+            
+                <input type="text" id="userQuery" placeholder="Ask something..." />
+                <button id="askBot" class="btnask">Ask Bot</button> 
+            
+                <div id="query" style="display: none;"></div>
+                <div id="botResponseContainer" style="display: none;">
+                    <h4>Bot Response:</h4>
+                    <div id="botResponse"></div>
+                </div>
+            </section>
+            
+
+                   
+            </section>
+        </main>
+
+        <footer>
+            <p>Weather Dashboard © 2024</p>
+        </footer>
+    </div>
+
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
